@@ -10,7 +10,10 @@
     <a-scene>
 
       <a-sphere position="0 1 -1" radius="1" color="#EF2D5E"></a-sphere>
-      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1.5"  color="#4CC3D9"></a-box>
+      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1.5"  color="#4CC3D9">
+          <a-animation attribute="rotation" dur="1000" fill="forwards" easing="linear" to="0 405 0" repeat="indefinite"></a-animation>
+          <a-animation attribute="position" dur="1000" easing="ease-out" to="0 6 0" repeat="indefinite" direction="alternate"></a-animation>
+      </a-box>
       <a-ring position="1 1 1" radius-inner="0.5" radius-outer="1" color="#FFC65D"></a-ring>
       <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! • A-Frame</title>
+    <title>Hello, World! A-Frame</title>
     <meta name="description" content="Hello, World! • A-Frame">
     <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
   </head>
@@ -18,9 +18,9 @@
         <a-asset-item id="obj1-obj" src="obj1.obj"></a-asset-item>
         <a-asset-item id="obj1-mtl" src="obj1.mtl"></a-asset-item>
       </a-assets>
-      <a-entity obj-model="obj: #obj1-obj; mtl: #obj1-mtl"></a-entity>
+      <a-entity position="0 0 2" obj-model="obj: #obj1-obj; mtl: #obj1-mtl"></a-entity>
 
-      <a-sky color="#ECECEF"></a-sky>
+      <a-sky src="360photo.jpg"></a-sky>
       <a-entity position="0 0 3.8">
         <a-camera></a-camera>
       </a-entity>

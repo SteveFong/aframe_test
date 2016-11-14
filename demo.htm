@@ -5,13 +5,31 @@
     <title>Hello, World! A-Frame</title>
     <meta name="description" content="Hello, World! • A-Frame">
     <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script>
+      onload = function() {
+        AFRAME.registerComponent('scale-on-click', {
+          schema: {
+            to: {default: '2 2 2'}
+          },
+          init: function () {
+            var data = this.data;
+            this.el.addEventListener('click', function () {
+              this.setAttribute('scale', data.to);
+            });
+          }
+        });
+      }
+    </script>
   </head>
   <body>
     <a-scene>
 
       <a-sphere position="0 1 -1" radius="1" color="#EF2D5E"></a-sphere>
-      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1.5"  color="#4CC3D9"></a-box>
-      <a-ring position="1 1 1" radius-inner="0.5" radius-outer="1" color="#FFC65D"></a-ring>
+      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1.5"  color="#4CC3D9">
+          <a-animation attribute="rotation" dur="1000" fill="forwards" easing="linear" to="0 405 0" repeat="indefinite"></a-animation>
+          <a-animation attribute="position" dur="1000" easing="ease-out" to="0 6 0" repeat="indefinite" direction="alternate"></a-animation>
+      </a-box>
+      <a-ring position="1 1 1" radius-inner="0.5" radius-outer="1" color="#FFC65D" scale-on-click="to: 1.5 1.5 1.5"></a-ring>
       <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
       <a-assets>
@@ -22,7 +40,9 @@
 
       <a-sky src="360photo.jpg"></a-sky>
       <a-entity position="0 0 3.8">
-        <a-camera></a-camera>
+        <a-camera>
+            <a-cursor color="#2E3A87"></a-cursor>
+        </a-camera>
       </a-entity>
 
     </a-scene>

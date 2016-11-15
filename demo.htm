@@ -45,6 +45,11 @@
         <a-asset-item id="obj1-mtl" src="obj1.mtl"></a-asset-item>
       </a-assets>
       <a-entity id="obj1" position="0 0 2" obj-model="obj: #obj1-obj; mtl: #obj1-mtl"></a-entity>
+      
+      <a-light type="spot" color="#F00" position="5 5 0" look-at="a-ring"></a-light>
+      <a-light type="point" color="#AAA" position="0 5 5">
+          <a-animation attribute="color" from="#AAA" to="#C60" dur="10000" fill="alternate" repeat="indefinite">
+      </a-light>
 
       <a-sky src="360photo.jpg"></a-sky>
       <a-entity position="0 0 3.8">
